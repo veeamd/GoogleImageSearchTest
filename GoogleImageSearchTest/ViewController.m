@@ -128,7 +128,7 @@
     __weak typeof(self) weakself = self;
     [[ServiceManger sharedManger] searchImagesWithRequest:request completion:^(NSArray *imageResults, NSError *error) {
         if (imageResults) {
-            typeof(self) strongSelf = weakself;
+            ViewController *strongSelf = weakself;
             if (strongSelf) {
                 [strongSelf.resultImages addObjectsFromArray:imageResults];
                 [strongSelf.collectionView reloadData];
